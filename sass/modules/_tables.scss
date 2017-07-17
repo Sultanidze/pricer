@@ -1,0 +1,60 @@
+﻿/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "base";
+th,
+td {
+  @include px-to-rem(padding, 5px);
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  color:#707070;
+  @include font-size(1);
+}
+th.bright{
+    @include linear-gradient(to bottom, #fff, #fef8ef);
+    color:$primary-orange;
+}
+td.bright{
+    background:#fef8ef;
+    color:$primary-orange;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+  border-left:none;
+  text-align:left;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+th.last,
+td.last{//ie8
+    padding-right:0; 
+}
+
+thead th{
+    font-weight:400;
+}
+tfoot td{
+    border-bottom:none;
+
+    &.bright{
+        @include linear-gradient(to bottom, #fef8ef, #fff);
+        color:$primary-orange;
+    }
+}
+
+@media (min-width:550px){
+    th,td{
+        @include px-to-rem(padding, 12px 15px);
+        @include font-size(1.6);
+    }
+    thead th{
+        @include px-to-rem(padding, 40px 15px 16px 15px);
+    }
+    tfoot td{
+        @include px-to-rem(padding, 16px 15px 32px 15px);
+    }
+}

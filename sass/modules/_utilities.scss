@@ -1,0 +1,36 @@
+﻿@import "base";
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.pull-left {float:left;}
+.pull-right {float: right;}
+img.align-left {
+    float:left;
+    @include px-to-rem(margin, 0 10px 5px 0);
+}
+img.align-right{
+    float:right;
+    @include px-to-rem(margin, 0 0 5px 10px);
+}
+img.full-width{clear:both;display:block;width:100%;height:auto;margin:0 0 0 0;}
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+.max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.as-table{
+    display:table;
+    width:100%;
+}
+.as-cell{
+    display:table-cell;
+    vertical-align:middle;
+}

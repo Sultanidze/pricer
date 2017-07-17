@@ -1,0 +1,281 @@
+﻿@import "_base.scss";
+
+@mixin alt-section(){
+    @include px-to-rem(padding, 25px 0);
+    background-color:#f9f9f9;
+}
+
+@mixin section-title{
+    @include px-to-rem(padding-left, 70px);
+    background-image:url(../img/icons.png);
+    background-repeat:no-repeat;
+}
+
+@mixin fixed-bg{
+    color:#fff;
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:50% 0;
+}
+
+
+/*"More" button*/
+a.more{
+    display:block;
+    @include px-to-rem(width,52px);
+    @include px-to-rem(height, 52px);
+    @include px-to-rem(line-height, 52px);
+    box-sizing:border-box;
+    border-radius:50%;
+    border:2px solid #fff;
+    text-align:center;
+
+    &:hover,
+    &:active{
+        background-color:#749aad;
+        background-color:rgba(#fff, 0.4);
+        outline:0;
+    }
+}
+
+#about,
+#skills,
+#history,
+#contacts{
+    @include fixed-bg;
+}
+
+
+
+/*Start Screen*/
+#about{
+    background-image:url(../img/bg-about.png);
+
+    .container{
+        position:relative;
+    }
+
+    .as-cell{
+        @include px-to-rem(padding, 100px 0);
+    }
+    a.more{
+        position:absolute;
+        @include px-to-rem(bottom, 20px);
+        left:50%;
+        @include px-to-rem(margin-left, -26px);
+    }
+}
+@media (min-width:1000px){
+    #about{
+        a.more{
+            @include px-to-rem(bottom, 80px);
+        }
+    }
+}
+
+/*Features*/
+#features{
+    @include alt-section;
+}
+
+@media (min-width:550px){
+    #features h2{
+        @include section-title;
+        background-position:0 0;
+    }
+}
+
+/*Features Icons*/
+.icon{
+    @include px-to-rem(margin-top, 20px);
+    .title{
+        @include px-to-rem(padding, 10px 0);
+        @include px-to-rem(margin-bottom, 10px);
+        color:#5fbabf;
+        @include font-size(1.8);
+        font-weight:700;
+        position:relative;
+        box-sizing:border-box;
+
+        &:after{
+            content:'';
+            display:block;
+            @include px-to-rem(width, 120px);
+            @include px-to-rem(height, 1px);
+            position:absolute;
+            top:100%; left:50%;
+            @include px-to-rem(margin-left, -60px);
+            background:#5fbabf;
+        }
+    }
+}
+.icon + p{
+    @include px-to-rem(max-width, 280px);
+    @include px-to-rem(margin, 0 auto 20px);
+}
+
+.first .icon .title{
+    color:#968abb;
+    &:after{
+        background:#968abb;
+    }
+}
+.last .icon .title{
+    color:#a6d396;
+    &:after{
+        background:#a6d396;
+    }
+}
+
+/*Skills*/
+#skills{
+    @include px-to-rem(padding, 40px 0);
+    background-image:url(../img/bg-skills.png);
+
+    h2, h3, h4{
+        color:#fff;
+    }
+
+    ul{
+        margin-bottom:0;
+    }
+
+    img{
+        @include px-to-rem(margin-bottom, 20px);
+    }
+}
+@media (min-width:750px){
+    #skills{
+        img{
+            margin-bottom:0;
+        }
+    }
+}
+
+/*How-it-works*/
+#how-it-works{
+    @include alt-section;
+}
+@media (min-width:550px){
+    #how-it-works h3{
+        @include section-title;
+        background-position:0 -70px;
+    }
+}
+
+/*History*/
+#history{
+    @include px-to-rem(padding, 40px 0);
+    background-image:url(../img/bg-history.jpg);
+    text-align:center;
+
+    h2,h3,h4{
+        color:#fff;
+    }
+    .container{
+        position:relative;
+    }
+}
+
+.block-history{
+    @include px-to-rem(margin-bottom, 20px);
+    .block-icon{
+        @include px-to-rem(height, 50px);
+        @include px-to-rem(line-height, 50px);
+    }
+    .year{
+        @include px-to-rem(margin, 5px 0);
+        @include font-size(3);
+        font-weight:600;
+    }
+}
+
+@media (min-width:1200px){
+    #history{
+        .container{
+            background:url(../img/gear.png) center center no-repeat;
+            @include px-to-rem(height, 1000px);
+        }
+    }
+
+    .block-history{
+        position:absolute;
+        @include px-to-rem(width, 270px);
+        @include px-to-rem(margin-left, -135px);
+    }
+
+    #y10{
+        @include px-to-rem(width, 450px);
+        @include px-to-rem(top, 50px);
+        left:50%;
+        @include px-to-rem(margin-left, -225px);
+    }
+    #y11{
+        @include px-to-rem(top, 210px);
+        left:80%;
+        
+    }
+    #y12{
+        @include px-to-rem(top, 450px);
+        left:85%;
+    }
+    #y13{
+        @include px-to-rem(top, 730px);
+        left:75%;
+    }
+    #y14{
+        @include px-to-rem(top, 830px);
+        left:50%;
+    }
+    #y15{
+        @include px-to-rem(top, 730px);
+        left:25%;
+    }
+    #y16{
+        @include px-to-rem(top, 270px);
+        left:20%;
+    }
+}
+
+/*Cases*/
+#cases{
+    @include px-to-rem(padding, 40px 0);
+    box-sizing:border-box;
+}
+
+@media (min-width:550px){
+    #cases{
+        h2, h3, h4{
+            @include section-title;
+            background-position:0 -140px;
+        }
+    }
+}
+
+@media (min-width:1000px){
+    #cases{
+        @include px-to-rem(height, 930px);
+        background:#fff url(../img/bg-cases.png) center bottom no-repeat;
+    }
+}
+
+
+/*Contacts*/
+#contacts{
+    @include px-to-rem(padding, 40px 0);
+    background-image:url(../img/bg-contacts.jpg);
+
+    h2, h3, h4{
+        color:#fff;
+    }
+    form{
+        @include px-to-rem(margin-bottom, 65px);
+    }
+    .button{
+        @include px-to-rem(height, 50px);
+        @include px-to-rem(line-height, 50px);
+        @include font-size(1.6);
+    }
+}
+

@@ -1,0 +1,73 @@
+// Core imports
+@import "../bourbon/bourbon";
+
+// Default project variables
+$primary:#00548f;
+$primary-orange:#f39200;
+$text-color:#717070;
+
+
+//Mixins
+@mixin font-size($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+
+//ie8 clearfix
+//for new browsers, use bourbon clearfix() mixin
+@mixin clear-fix(){
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+//px/rem
+// html {
+//  font-size: 62.5%; //on _main.scss
+//}
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin px-to-rem($property, $values) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}

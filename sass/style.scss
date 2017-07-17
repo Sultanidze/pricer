@@ -1,0 +1,25 @@
+// CSS normalize
+@import "modules/normalize";
+//base styles
+// see modules/_base.scss
+@import "modules/main";
+//other parts
+@import "modules/grid";
+@import "modules/menu";
+@import "modules/button";
+@import "modules/forms";
+@import "modules/tables";
+@import "modules/utilities";
+@import "modules/slider";
+@import "modules/sections";
+
+
+@import "partials/header";
+@import "partials/footer";
+
+//plugins vendors
+@import "vendor/bxslider";
+
+
+
+

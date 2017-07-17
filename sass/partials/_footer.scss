@@ -1,0 +1,53 @@
+@import "../modules/base";
+
+footer{
+    @include px-to-rem(padding, 16px 0);
+    background-color:#f9f9f9;
+    color:#363636;
+    font-family: Verdana, sans-serif;
+    text-align:center;
+    line-height:2;
+
+
+    a{
+        color:#363636;
+        text-decoration:none;
+        &:hover{
+            color:$primary;
+        }
+    }
+
+    ul{
+        list-style-type:none;
+        margin:0; padding:0;
+
+        li{
+            margin-bottom:0;
+            display:block;
+            text-align:center;
+        }
+
+    }
+}
+
+@media (min-width:1000px){
+    footer{
+        ul{
+            @include px-to-rem(height, 32px);
+            overflow:hidden;
+            text-align:justify;
+
+            &:after{
+                content:'';
+                margin-left:100%;
+                display:inline-block;
+            }
+            li{
+                display:inline-block;
+            }
+        }
+    }
+}
+
+
+

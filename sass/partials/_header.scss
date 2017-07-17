@@ -1,0 +1,89 @@
+@import "../modules/base";
+//Header
+//Desktop Header
+
+/*Header*/
+header{
+    @include px-to-rem(padding, 45px 0 0);
+    .menu ul{
+        a{
+            color:#fff;
+            &:hover,
+            &:active{
+                color:#d7e3ec;
+            }
+            &.button{
+                &:hover,
+                &:active{
+                    color:#fff;
+                }
+            }
+        }
+    }
+    
+    .logo{
+        display:block;
+        @include px-to-rem(margin-bottom, 10px);
+    }
+}
+
+.logo-block{
+    text-align:center;
+    @include px-to-rem(margin-bottom, 50px);
+}
+
+.logo-text{
+    color:#d7e3ec;
+    @include font-size(1.35);
+}
+
+@media (min-width:1000px){
+    .logo-block{
+        margin:0;
+        float:left;
+        text-align:left;
+    }
+    header .menu{
+        float:right;
+    }
+}
+
+/*Desktop Header*/
+#desktop-header{
+    @include px-to-rem(padding, 24px 0);
+    border-bottom:1px solid #eee;
+    background-color:#fff;
+    display:none;
+    .logo{
+        float:left;
+    }
+    .menu{
+        float:right;
+    }
+}
+@media (min-width:1000px){
+    #desktop-header{
+        display:block;
+    }
+}
+
+
+/*jQuery Waipoints helpers*/
+.stuck {
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:50;
+}
+
+.sticky-wrapper{
+    display:none;
+}
+@media (min-width:1000px){
+    .sticky-wrapper{
+        display:block;
+    }
+}
+
+
+

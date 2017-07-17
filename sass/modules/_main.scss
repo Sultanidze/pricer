@@ -1,0 +1,364 @@
+@import "base";
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+//Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700&subset=latin,cyrillic);
+@import url('fonts/fontello/css/fontello.css');
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: 'Open Sans', Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-weight:400;
+  color: $text-color; }
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  @include px-to-rem(margin-bottom,20px);
+  font-weight: 400; }
+h1{
+    @include font-size(3);
+    line-height: 1.2;
+    @include px-to-rem(margin-bottom, 50px);
+    font-weight:300;
+}
+h2, h3, h4 {
+    @include font-size(2.6);
+    line-height: 1.6;
+    color:$primary;
+}
+
+h5 {
+    @include font-size(1.8);
+    line-height: 1.5;
+}
+h6 {
+    @include font-size(1.5);
+    line-height: 1.6;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1{
+      @include font-size(5.4);
+  }
+
+  h2, h3, h4{
+      @include font-size(3);
+  }
+  
+  h5 {
+      @include font-size(2.4);
+  }
+  h6 {
+      @include font-size(1.5);
+  }
+}
+
+p {
+  margin-top: 0; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: $primary; }
+a:hover {
+  color: darken($primary, 10%); }
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+    list-style: circle inside; }
+ol {
+    list-style: decimal inside; }
+ol, ul {
+    padding-left: 0;
+    margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    @include px-to-rem(margin, 15px 0 15px 30px);
+}
+li {
+    @include px-to-rem(margin-bottom,10px);
+}
+
+ul.list-styled{
+    list-style-type:none;
+    li{
+        @include px-to-rem(padding-left, 60px);
+        @include px-to-rem(margin-bottom, 15px);
+        @include font-size(1.8);
+        position:relative;
+
+        &:before{
+            content:'';
+            @include px-to-rem(width, 12px);
+            @include px-to-rem(height, 24px);
+            background:url(../img/arrow-right.svg);
+            position:absolute;
+            top:2px; left:0;
+        }
+    }
+}
+/* Blockquote
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+blockquote{
+    @include font-size(1.6);
+    line-height:1.6;
+    font-style: italic;
+    @include px-to-rem(padding, 0 0 0 20px);
+    border-left:1px solid $primary;
+    span{
+        display:block;
+        @include font-size(0.7);
+    }
+}
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+    @include px-to-rem(margin-bottom, 10px);
+}
+input,
+textarea,
+select,
+fieldset {
+    @include px-to-rem(margin-bottom, 15px);
+}
+pre,
+blockquote,
+form,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+    @include px-to-rem(margin-bottom, 25px);
+}
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+    @include px-to-rem(margin-top, 30px);
+    @include px-to-rem(margin-bottom, 35px);
+    border-width: 0;
+    border-top: 1px solid #E1E1E1;
+}
+
+/* Transitions
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a, button, input[type="button"], input[type="submit"],
+#{$all-text-inputs}, select, textarea{
+    @include transition-property(border-color,color,background-color);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in);
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
