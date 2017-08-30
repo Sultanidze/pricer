@@ -85,11 +85,11 @@ jQuery(document).ready(function ($) {
     var $scrSlider = $('#screens .slider ul').bxSlider({
         pager: false,
         // controls: false,
-        hideControlOnEnd: true,
+//        hideControlOnEnd: true,
     	slideMargin: 15,
     	auto:true,
     	autostart: true,
-        infiniteLoop: false,
+        infiniteLoop: true,
         speeed: 500,
         nextSelector: '.slider-right',
         prevSelector: '.slider-left',
