@@ -82,7 +82,22 @@ jQuery(document).ready(function ($) {
 
 
     //Слайдер
-    $('.slider ul').bxSlider({
+    var $scrSlider = $('#screens .slider ul').bxSlider({
+        pager: false,
+        // controls: false,
+        hideControlOnEnd: true,
+    	slideMargin: 15,
+    	auto:true,
+    	autostart: true,
+        infiniteLoop: false,
+        speeed: 500,
+        nextSelector: '.slider-right',
+        prevSelector: '.slider-left',
+        nextText: '',
+        prevText:''
+    });
+
+    $('#cases .slider ul').bxSlider({
         pager: false,
         infiniteLoop: false,
         hideControlOnEnd: true,
