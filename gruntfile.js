@@ -24,8 +24,14 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+		// uglify: {
+		// 	dest:{
+		// 		files: {}
+		// 	}
+		// }
 	});
 	grunt.registerTask('default', ['sass:dist', 'watch']);
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks('grunt-contrib-uglify');
 };
